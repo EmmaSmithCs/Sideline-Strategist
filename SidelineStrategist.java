@@ -3,7 +3,7 @@ import java.awt.*;
 
 public class SidelineStrategist {
     private CardLayout cardLayout;
-    private JPanel mainpainel;
+    private JPanel mainPanel;
 
     public SidelineStrategist() {
         // Create the main JFrame
@@ -14,17 +14,19 @@ public class SidelineStrategist {
 
         // Initialize the main JPanel and CardLayout
         cardLayout = new CardLayout(); 
-        mainpainel = new JPanel(cardLayout);
+        mainPanel = new JPanel(cardLayout);
 
         // Add the title screen to the main JPanel
-        TitleScreen titleScreen = new TitleScreen(cardLayout, mainpainel);
-        mainpainel.add(titleScreen, "titleScreen");
+        TitleScreen titleScreen = new TitleScreen(cardLayout, mainPanel);
+        ClubCreationScreen clubCreationScreen = new ClubCreationScreen(cardLayout, mainPanel);
+        mainPanel.add(titleScreen, "titleScreen");
+        mainPanel.add(clubCreationScreen, "clubCreationScreen");
 
         // Add mainpainel to the JFrame
-        frame.add(mainpainel);
+        frame.add(mainPanel);
 
         // Show the title screen
-        cardLayout.show(mainpainel, "titleScreen");
+        cardLayout.show(mainPanel, "titleScreen");
 
         // Make the frame visible
         frame.setVisible(true);

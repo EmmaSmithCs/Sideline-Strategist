@@ -22,7 +22,8 @@ public class TitleScreen extends JPanel{
         startButton.setPreferredSize(new Dimension(500, 250));
 
         startButton.addActionListener(e -> {
-            // Switch to the main panel when the button is clicked
+            // Switch to the club creation screen when the button is clicked
+            cardLayout.show(mainPanel, "clubCreationScreen");
             
         });
 
